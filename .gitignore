@@ -1,0 +1,13 @@
+# access control for manual console
+manual/.ht*
+
+# passwords just in case
+db_passwd.php
+
+# non-project developed stuff
+wiki
+updates
+resources
+
+# map tiles - excessively large size / amount of files for now
+map/tiles

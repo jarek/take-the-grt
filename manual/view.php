@@ -1,6 +1,6 @@
 <?php
 
-include_once 'headers.php';
+include_once '../common/headers.php';
 
 $selectForm = new Form();
 $selectForm->Add(new DropDown('routeID', Route::GetAllRoutes()));
@@ -36,8 +36,7 @@ if (count($routedirs) > 0)
 				{
 					echo '<strong>';
 				}
-				echo $stop->code;
-	//			echo '<br/>(' . $stop->latitude . ',' . $stop->longitude . ')';
+				echo $stop->ToString();
 				echo '</td>';
 			}
 			echo '</tr>' . "\n";

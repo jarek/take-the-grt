@@ -1,6 +1,6 @@
 <?php
 
-include_once 'headers.php';
+include_once '../common/headers.php';
 
 	echo '<p>Select route:';
 	$dropdown = new DropDown('routeID', Route::GetAllRoutes());

@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Map</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Language" content="en-us" />
+<!-- optional regions -->
+<script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=ABQIAAAAE-rbmtzBsD7Vtau4IXxf4hTgbDb8k_vOH7bgH5uMkJa7XpJwfRRiH4Ik9LKPRCP2Idcrct5e75LgVQ"
+  type="text/javascript"></script>
+<script type="text/javascript" src="gMapTiles.js"></script>
+<script type="text/javascript">    
+                
+    //------Google Maps------//
+    //<![CDATA[
+
+    var map, custommap2;
+
+    //Intializes the map
+    function load() 
+    {
+        if (GBrowserIsCompatible()) 					    //Checks browser compatibility
+        {
+		map = new GMap2(document.getElementById("map"));		    //Creates a new map
+	        map.addControl (new GSmallMapControl());		    //Adds move/zoom controls to the map
+    		
+    		// Create the copyright collection
+		var copyCollection = new GCopyrightCollection('GRT Bus Route Map for Waterloo/Kitchener Area ');
+		var copyright = new GCopyright(1, new GLatLngBounds(new GLatLng(43.3171849, -80.6176758), new GLatLng(43.5485481, -80.3430176)), 0, "Created by Hassaan A.");
+		copyCollection.addCopyright(copyright);
+
+		// Setup the tile layers
+		// Setup the options for our map layer
+		var GMapTypeOptions = new Object();
+		GMapTypeOptions.minResolution = 12;
+		GMapTypeOptions.maxResolution = 16;
+		GMapTypeOptions.errorMessage = "No map data available";
+
+		// Setup the tile layers
+		var tilelayers2 = new Array();
+		tilelayers2[0] = G_NORMAL_MAP.getTileLayers()[0];
+		tilelayers2[1] = new GTileLayer(copyCollection, 15, 18);
+		tilelayers2[1].getTileUrl = CustomGetTileUrl
+		tilelayers2[1].getOpacity = function() { return 1; }; //of the non transparent part
+		tilelayers2[1].isPng = function() { return true; };
+
+		custommap2 = new GMapType(tilelayers2, G_NORMAL_MAP.getProjection(), "Transit", GMapTypeOptions);
+		custommap2.getTextColor = function() { return "#fff"; };
+		map.addMapType(custommap2);
+		
+		var mapControl = new GHierarchicalMapTypeControl();
+		mapControl.clearRelationships();
+		map.addControl(mapControl);
+		map.removeMapType(G_SATELLITE_MAP);
+		map.removeMapType(G_NORMAL_MAP);
+		map.removeMapType(G_HYBRID_MAP);
+
+		var point = new GLatLng ("43.468899", "-80.539463");
+		map.setCenter ((point), 14);
+        }
+        else
+        {
+		alert ("Your browser is not compatible with Google Maps");
+        }
+    }
+
+    //]]>
+</script>
+</head>
+<body onload="load()" style="margin: 0; padding: 0; font-family: verdana; font-size: 0.8em;">
+<div id="copyinfo" style="height: 2%; text-align: center;">
+GRT map overlay created by Hassaan A. of <a href="http://www.och.uwaterloo.ca/index.html">UW Off-Campus Housing</a>
+&#183; hosting by <a href="http://takethegrt.ca/">take the grt</a></div>
+<div id="map" style="position: absolute; height: 98%; width: 100%; margin: 0; padding: 0;"> </div>
+</body>

@@ -1,6 +1,6 @@
 <?php
 
-include_once 'headers.php';
+include_once '../common/headers.php';
 
 
 echo '<a href="createDirection.php">Insert directions for routes</a><br /><br />';
