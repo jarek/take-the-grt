@@ -1,7 +1,5 @@
 <?php
 
-include_once '../common/headers.php';
-
 class Trip
 {
 	private $id = false;
@@ -27,7 +25,8 @@ class Trip
 		}
 		else if ($route_id !== false && is_numeric($route_id) === true)
 		{
-			$this->id = $id;
+			// hacking "route" ID param to really contain trip id. classy
+			$this->id = $route_id;
 			self::ReadFromDatabase();
 		}
 		else if ($route_id !== false && is_numeric($route_id) === false)

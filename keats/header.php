@@ -77,10 +77,7 @@ echo '<';
 
 <body>
 
-<p class="note">The GRT switched to a spring schedule on Monday, April 6th.
-Among <a href="http://grt.ca/web/transit.nsf/$All/8EBA77354278EAAB85256D8000409481?OpenDocument">the changes</a>,
-route 12 and 29 schedules are being adjusted, and route 12 is seeing service reductions.
-The new schedules will not be shown on this page until our new automated scraper is written. 
-We'll try to get it done as soon as possible, but that looks to be late April. 
-Sorry for any inconvenience and thanks for using! 
-We'll be back to help you in the spring term.</p>
+<p class="note">We are currently in the process of re-writing our 
+scraper. This is necessary so that we can automatically pull in new data when 
+GRT schedule changes. 
+Please check back. Thanks!</p>

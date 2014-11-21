@@ -1,0 +1,26 @@
+14:30		Started talking with [username] on Saturday 21/02/09 02:30:13 PM
+[...]
+14:41	qviri	ok I think we're good
+	qviri	go to http://192.237.29.245/HastinfoWeb/StartTimetableForm.aspx
+	qviri	today (feb 21) is saturday schedule, tomorrow (22) is sunday schedule obv
+14:42	qviri	route of interest is 12 both ways, first one is to Kitchener (you can't see while selecting, gg), second one is to Waterloo
+14:43	qviri	look at departure times for every stop from 3148 keats/candlewood to as far as you feel like up to 2785 university/king (this is for waterloo bound)
+	[username]	Just need me to scrape all this info?
+	[username]	what format? just in an excel doc ok?
+	qviri	for kitchener bound it's 3621 uni/king to 3161 keats/candlewood
+	qviri	sec
+14:44	qviri	http://takethegrt.ca/manual/tempTripInsert.php is my fancy insert form
+	qviri	takes stop number as integer (what grt defines it as, so 3161 or whatever
+	qviri	trip number which I'll tell you shortly
+14:45	qviri	and stop times which is just copied out of the hastinfo schedule. don't copy the first value because that's the previous day's last trip. 
+	qviri	after that, it looks like 
+	qviri	7:15 AM[V]
+	qviri	7:45 AM[V]
+	qviri	8:15 AM[V]
+	qviri	and just feed this into the form, all of the day's times for each stop at the same time
+14:47	qviri	starting trips are: 176 for saturday kitchener bound; 109 for saturday waterloo bound; 236 for sunday kitchener bound; 211 for sunday waterloo bound
+14:48	qviri	I think that's all, just go through the stops and copy pasta that shiz
+	qviri	you should be able to see the saturday schedule on http://takethegrt.ca/keats/ as it goes up
+	qviri	let me know if anything goes wrong and glhf?
+14:49	[username]	alright, give me a bit, gotta brew up some tea and whatnot and then I'll see how this baby works
+	qviri	kk

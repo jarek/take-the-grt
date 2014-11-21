@@ -1,7 +1,5 @@
 <?php
 
-include_once '../common/headers.php';
-
 class Stop
 {
 	public $id;
@@ -34,7 +32,7 @@ class Stop
 		{
 			// query database
 			$this->id = $id;
-			$this->code = $code;
+			$this->code = $id;
 
 			self::ReadFromDatabase();
 		}

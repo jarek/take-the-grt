@@ -1,7 +1,5 @@
 <?php
 
-include_once '../common/headers.php';
-
 class Route 
 {
 	private $id;
