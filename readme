@@ -1,1 +1,15 @@
-this is a readme file
+This is code from a project dating from 2008-2010 that aimed to improve web applications and presence for Grand River Transit.
+
+At the time, GRT did not have a GTFS feed nor a convenient online map. Online access to schedules was through PDFs or a really bad proprietary web app, meanwhile the system map was only available through 15-25 MB PDFs.
+
+- Created a slippy map page, reusing tiles made by University of Waterloo Off-Campus Housing (/map);
+- Created a SQL table structure and basic classes for GTFS concepts like routes, trips, and stops (/gtfsoo);
+- Attempted to extract schedules from the web app, first doing it manually with a mechanical-turk-like approach (/manual) then attempting an automated scraper (/scraper);
+- Created a mini-hub for two bus routes between University of Waterloo and a neighbourhood where many students live (/keats);
+- Finally, started but didn't finish writing a UW hub page with upcoming departures for all nearby buses, intended for students heading home or out to entertainment (/portals).
+
+Code was in PHP, including my first attempts at object-oriented PHP5.
+
+There was a mediawiki, and a static dump of the content has been saved to /wiki.
+
+As of 2014, GRT now has a GTFS feed as well as a real-time feed at http://realtimemap.grt.ca/. System maps are still massive PDFs but with GTFS now being available, third-party maps can now be created more easily.
