@@ -5,7 +5,6 @@ manual/.ht*
 db_passwd.php
 
 # non-project developed stuff
-wiki
 updates
 resources
 
